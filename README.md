@@ -4,6 +4,6 @@
 
 > Keep calm and coding.
 
-🇨🇳 China Chengdu・👨🏻‍💻 Hero Devloper
+🇨🇳 China Chengdu・👨🏻‍💻 Hero Developer
 
 Skills: Flutter & Vue.js & React & PHP & TypeScript

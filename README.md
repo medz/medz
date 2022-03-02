@@ -6,4 +6,6 @@
 
 🇨🇳 China Chengdu・👨🏻‍💻 Hero Developer
 
-Skills: Flutter & Vue.js & React & PHP & TypeScript
+Skills: Flutter & Vue.js & React & TypeScript
+
+承接外包，价格合理。有意联系我哦！E-Mail: whine.whitish.0u@icloud.com

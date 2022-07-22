@@ -4,7 +4,7 @@
 
 > Keep calm and coding.
 
-🇨🇳 Chengdu・👨🏻‍💻 Full Stack Developer
+🇨🇳 Chengdu・👨🏻‍💻 Full-stack Developer
 
 Language：Dart、Rust、TypeScript/JavaScript(ES6+)、Swift、PHP
 

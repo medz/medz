@@ -6,6 +6,10 @@
 
 🇨🇳 China Chengdu・👨🏻‍💻 Hero Developer
 
+Language：Dart、Rust、TypeScript/JavaScript(ES6+)、Swift、PHP
+
 Skills: Flutter & Vue.js & React & TypeScript, NodeJS, Rust
 
-承接外包，价格合理。有意联系我哦！E-Mail: whine.whitish.0u@icloud.com
+Framework：Flutter、Vue.js、React.js、And any more...
+
+E-Mail: whine dot whitish dot 0u at icloud dot com

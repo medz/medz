@@ -12,6 +12,6 @@ Motto: **(if true == false) false = true**
 
 E-Mail: whine dot whitish dot 0u at icloud dot com
 
-Language：Dart、Rust、TypeScript/JavaScript(ES6+)、Swift、PHP
+Language：Dart❤️、Rust🤩、TypeScript/JavaScript(ES6+)🥳、Swift
 
-Framework：Flutter、Vue.js、React.js、Laravel、Nest.js、And any more...
+Framework：Flutter、Vue.js、React.js、Nest.js、And any more...

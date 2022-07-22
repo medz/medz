@@ -8,8 +8,6 @@
 
 Language：Dart、Rust、TypeScript/JavaScript(ES6+)、Swift、PHP
 
-Skills: Flutter & Vue.js & React & TypeScript, NodeJS, Rust
-
 Framework：Flutter、Vue.js、React.js、And any more...
 
 E-Mail: whine dot whitish dot 0u at icloud dot com

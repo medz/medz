@@ -10,7 +10,7 @@ Motto: **(if true == false) false = true**
 
 🇨🇳 Chengdu・👨🏻‍💻 Full-stack Developer
 
-E-Mail: whine dot whitish dot 0u at icloud dot com
+E-Mail: shiweidu at outlook dot com
 
 Language：Dart❤️、Rust🤩、TypeScript/JavaScript(ES6+)🥳、Swift
 

@@ -4,7 +4,7 @@
 
 I'm Seven Du, a full-stack developer starting a business. Founded [Odroe Inc](https://github.com/odroe), a company dedicated to open source software. 
 
-Motto: **(if true == false) false = true**
+Motto: **if(true == false) false = true**
 
 🇨🇳 Chengdu・👨🏻‍💻 Full-stack Developer
 

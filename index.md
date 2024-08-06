@@ -57,8 +57,8 @@ I mainly developed and maintained [ThinkSNS](https://thinksns.com).
 All the coding and open source marketing of the project were completed
 by me and brought millions of profits to the company every year.
 
-During my tenure, in addition to [ThinkSNS](https://thinksns.com),
-the open source project was fully responsible by me.
+During his tenure, in addition to [ThinkSNS](https://thinksns.com)
+i was fully responsible for the open source project.
 He also led the team to complete several large projects:
 
 * 浙江卫视 - 中国蓝 App 后端 + 管理后台

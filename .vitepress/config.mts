@@ -23,22 +23,16 @@ export default defineConfig({
       },
     ],
   ],
-  sitemap: { hostname: "https://medz.cn" },
+  sitemap: { hostname: "https://medz.dev" },
   themeConfig: {
     logo: "/favicon.png",
     siteTitle: false,
     nav: [
       { text: "Profile", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
-    ],
-    sidebar: [
-      {
-        text: "Examples",
-        items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
-        ],
-      },
+      { text: "Blog", link: "/markdown-examples" },
+      { text: "Projects", link: "/markdown-examples" },
+      { text: "Meeting", link: "/markdown-examples" },
+      { text: "Sponsors", link: "/markdown-examples" },
     ],
     socialLinks: [{ icon: "github", link: "https://github.com/medz" }],
   },

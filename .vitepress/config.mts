@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
+  srcExclude: ["README.md"],
   title: "Seven Du",
   description: "Seven Du's Portfolio",
   cleanUrls: true,
@@ -13,8 +14,9 @@ export default defineConfig({
         href: "/favicon.png",
       },
     ],
+
     ["meta", { name: "twitter:site", content: "@shiweidu" }],
-    ["meta", { name: "twitter:card", content: "summary" }],
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
     [
       "meta",
       {
@@ -22,8 +24,25 @@ export default defineConfig({
         content: "https://www.github.com/medz.png",
       },
     ],
+    ["meta", { name: "twitter:title", content: "Seven Du" }],
+    ["meta", { name: "twitter:description", content: "Seven Du's Portfolio" }],
+
+    ["meta", { property: "og:type", content: "website" }],
+    ["meta", { property: "og:title", content: "Seven Du" }],
+    ["meta", { property: "og:description", content: "Seven Du's Portfolio" }],
+    ["meta", { property: "og:property", content: "Seven Du" }],
+    ["meta", { property: "og:url", content: "https://medz.dev" }],
+    [
+      "meta",
+      { property: "og:image", content: "https://www.github.com/medz.png" },
+    ],
   ],
-  sitemap: { hostname: "https://medz.dev" },
+  sitemap: {
+    hostname: "https://medz.dev",
+    // transformItems(items) {
+    //   return items.filter(({ url }) => url !== "README");
+    // },
+  },
   themeConfig: {
     logo: "/favicon.png",
     siteTitle: false,

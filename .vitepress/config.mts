@@ -16,6 +16,7 @@ export default defineConfig({
     ],
 
     ["meta", { name: "twitter:site", content: "@shiweidu" }],
+    ["meta", { name: "twitter:creator", content: "@shiweidu" }],
     ["meta", { name: "twitter:card", content: "summary" }],
     [
       "meta",

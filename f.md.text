@@ -1,0 +1,7 @@
+features:
+  - title: Blog
+    details: Occasionally post some insights, maybe about technology or maybe about complaints.<a class="feature-link" href="/blog">View Blog →</a>
+  - title: Projects
+    details: Check out my open source projects, maybe you can find what you want.<a class="feature-link" href="/projects">View Projectes →</a>
+  - title: Meeting
+    details: Meet online or offline to exchange ideas or ask me questions.<a class="feature-link" href="/meeting">Start Chat →</a>

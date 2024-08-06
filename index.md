@@ -7,13 +7,6 @@ hero:
   image:
     src: https://www.github.com/medz.png
     alt: Seven Du' Photo
-features:
-  - title: Blog
-    details: Occasionally post some insights, maybe about technology or maybe about complaints.<a class="feature-link" href="/blog">View Blog →</a>
-  - title: Projects
-    details: Check out my open source projects, maybe you can find what you want.<a class="feature-link" href="/projects">View Projectes →</a>
-  - title: Meeting
-    details: Meet online or offline to exchange ideas or ask me questions.<a class="feature-link" href="/meeting">Start Chat →</a>
 ---
 
 <style>
@@ -73,7 +66,7 @@ I left 「智艺创想」 and started my own business (Odroe Inc.), and my entre
 So far, my successful open source projects are:
 
 * [Prisma Dart](https://prisma.pub) - Prisma Client Dart is an auto-generated type-safe ORM. It uses Prisma Engine as the data access layer and is as consistent as possible with the Prisma Client JS/TS APIs.
-* [Spry](spry.fun) - A lightweight, composable Dart web framework designed to work collaboratively with various runtime platforms.
+* [Spry](https://spry.fun) - A lightweight, composable Dart web framework designed to work collaboratively with various runtime platforms.
 
 ## How It's Going
 

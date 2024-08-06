@@ -21,7 +21,7 @@ export default defineConfig({
       "meta",
       {
         name: "twitter:image",
-        content: "https://www.github.com/medz.png",
+        content: "https://medz.dev/photo.jpeg",
       },
     ],
     ["meta", { name: "twitter:title", content: "Seven Du" }],
@@ -32,10 +32,7 @@ export default defineConfig({
     ["meta", { property: "og:description", content: "Seven Du's Portfolio" }],
     ["meta", { property: "og:property", content: "Seven Du" }],
     ["meta", { property: "og:url", content: "https://medz.dev" }],
-    [
-      "meta",
-      { property: "og:image", content: "https://www.github.com/medz.png" },
-    ],
+    ["meta", { property: "og:image", content: "https://medz.dev/photo.jpeg" }],
   ],
   sitemap: {
     hostname: "https://medz.dev",

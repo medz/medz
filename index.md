@@ -5,7 +5,7 @@ hero:
   text: A full-stack developer starting a business
   tagline: Interesting · Optimistic · Friendly
   image:
-    src: https://www.github.com/medz.png
+    src: /photo.jpeg
     alt: Seven Du' Photo
 ---
 

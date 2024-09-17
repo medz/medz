@@ -16,6 +16,6 @@ Framework：Flutter、Vue.js、React.js、Nest.js、And any more...
 
 <p align="center">
   <a target="_blank" href="https://github.com/sponsors/medz#:~:text=Featured-,sponsors,-Current%20sponsors">
-    <img alt="sponsors" src="https://cdn.jsdelivr.net/gh/medz/public/sponsors.tiers.svg">
+    <img alt="sponsors" src="https://github.com/medz/public/raw/main/sponsors.tiers.svg">
   </a>
 </p>

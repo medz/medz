@@ -76,6 +76,6 @@ and serving and developing for my customers.
 
 ## Technology
 
-* Programming languages: Dart, JS/TS, Rust, Zig, Swift, CSS/HTML
+* Programming languages: Dart, JS/TS, Rust, Zig, Swift, Golang, CSS/HTML
 * Frameworks: Flutter, Vue/Nuxt.js, React/Next.js, Svelte/SvelteKit, Nest.js, Express/Koa, Spry, Tailwind CSS amd more...
 * Others: Prisma, Docker, tokio, Zed, Git and more...

@@ -14,7 +14,7 @@ Language：Dart❤️、Rust🤩、TypeScript/JavaScript(ES6+)🥳、Swift
 
 Framework：Flutter、Vue.js、React.js、Nest.js、And any more...
 
-![Some stats](https://github-readme-stats.vercel.app/api?username=medz&show_icons=true&include_all_commits=true&theme=transparent&hide_border=true)
+![Some stats](https://github-readme-stats.vercel.app/api?username=medz&show_icons=true&include_all_commits=true&theme=transparent&hide_border=true&custom_title=Seven%27s%20GitHub%20Stats)
 <p align="center">
   <a target="_blank" href="https://github.com/sponsors/medz#:~:text=Featured-,sponsors,-Current%20sponsors">
     <img alt="Sponsors" src="https://github.com/medz/public/raw/main/sponsors.tiers.svg">

@@ -23,7 +23,7 @@ Framework：Flutter、Vue.js、React.js、Nest.js、And any more...
     </td>
     <td>
       <a href="https://github.com/sponsors/medz">
-        <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=medz&layout=compact&theme=buefy&hide_border=true" />
+        <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=medz&layout=compact&theme=transparent&hide_border=true" />
       </a>
     </td>
   </tr>

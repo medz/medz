@@ -8,7 +8,7 @@ Motto: **if(true == false) false = true**
 
 🇨🇳 Chengdu・👨🏻‍💻 Full-stack Developer
 
-E-Mail: shiweidu at outlook dot com
+E-Mail: [hi@medz.dev](mailto:hi@medz.dev)
 
 Language：Dart❤️、Rust🤩、TypeScript/JavaScript(ES6+)🥳、Swift
 

@@ -42,7 +42,7 @@ import { VPTeamPageTitle } from 'vitepress/theme';
 I started programming at age 12 with Visual Basic, driven by curiosity about how websites work. This led me to explore PHP, HTML, CSS, and JavaScript, eventually becoming a recognized plugin and template developer in the PHPWind community.
 
 **CTO Experience (2015-2019)**
-Joined 智艺创想 in Chengdu as CTO, where I architected and maintained ThinkSNS, generating millions in annual revenue. Led development teams on major projects including:
+Joined 智艺创想 in Chengdu as CTO, where I architected and maintained ThinkSNS, creating millions in annual value for the company. Led development teams on major projects including:
 
 - 浙江卫视 - 中国蓝 App backend & admin system
 - Huawei Xinsheng Community + Huawei Weibo

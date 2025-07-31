@@ -45,7 +45,7 @@ Joined 智艺创想 in Chengdu as CTO, where I architected and maintained ThinkS
 - Midea Group Community Platform
 
 **Entrepreneur (2019-Present)**
-Founded Odroe Inc. with a focus on open source innovation. Created industry-leading tools that serve thousands of developers worldwide.
+Founded Odroe Inc. with a focus on open source innovation. Created industry-leading tools that serve thousands of developers worldwide. Currently also serving as Engineer at Panony, responsible for PANews - Asia's leading Web3 and blockchain media platform.
 
 ## Core Open Source Projects
 
@@ -63,11 +63,17 @@ Feature-rich HTTP client with Web API compatibility, supporting fetch-like synta
 
 ## Current Focus
 
-As CEO and lead engineer at Odroe, I balance strategic leadership with hands-on development, focusing on:
+As CEO of Odroe Inc. and Engineer at Panony, I balance multiple roles across different domains:
 
-- Open source tool development and maintenance
-- Customer relationship management and technical consulting
+**Open Source Development**
+- Maintaining and evolving core Dart ecosystem projects
 - Building sustainable business models around open source software
+- Community engagement and developer relations
+
+**Web3 & Blockchain Media**
+- Technical development and infrastructure for PANews platform
+- Supporting Asia's leading blockchain media operations
+- Bridging technology and media in the Web3 space
 
 ## Technology Stack
 

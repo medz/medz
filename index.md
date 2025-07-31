@@ -2,8 +2,8 @@
 layout: home
 hero:
   name: 🫧 Hey, I'm Seven Du
-  text: A full-stack developer starting a business
-  tagline: Interesting · Optimistic · Friendly
+  text: Open Source Entrepreneur
+  tagline: Building the future with code, one project at a time
   image:
     src: /photo.jpeg
     alt: Seven Du' Photo
@@ -28,54 +28,51 @@ import { VPTeamPageTitle } from 'vitepress/theme';
 </script>
 
 <VPTeamPageTitle>
-  <template #title>Self-Introduction</template>
-  <template #lead>Born in December 1993, enjoys coding, anime, and games</template>
+  <template #title>About Me</template>
+  <template #lead>Passionate developer since 2005 • Open source advocate • CEO at Odroe Inc.</template>
 </VPTeamPageTitle>
 
-I started to get involved in development when I was about 12 years old.
-The first programming language I came into contact with was VB. At that time,
-the Internet in China was not well developed. Out of a child's curiosity,
-I used a website building tool to create my first website.
+## My Journey
 
-Therefore, I began to turn to PHP and HTML/CSS/JavaScript learning and used
-them to modify my own website.
+**Early Years (2005-2014)**
+I started programming at age 12 with Visual Basic, driven by curiosity about how websites work. This led me to explore PHP, HTML, CSS, and JavaScript, eventually becoming a recognized plugin and template developer in the PHPWind community.
 
-Then (around 2009), I came into contact with PHPWind (a forum building project)
-and have been making plug-ins and templates in the community.
-I became a well-known plug-in and template developer in the PHPWind community at that time.
+**CTO Experience (2015-2019)**
+Joined 智艺创想 in Chengdu as CTO, where I architected and maintained [ThinkSNS](https://thinksns.com), generating millions in annual revenue. Led development teams on major projects including:
 
-Time came to January 2015, I left Shenzhen and came to Chengdu.
-I joined 「智艺创想」 and served as CTO and obtained a certain equity.
-I mainly developed and maintained [ThinkSNS](https://thinksns.com).
-All the coding and open source marketing of the project were completed
-by me and brought millions of profits to the company every year.
+- 浙江卫视 - 中国蓝 App backend & admin system
+- [Huawei Xinsheng Community + Huawei Weibo](https://xinsheng.huawei.com)
+- Midea Group Community Platform
 
-During his tenure, in addition to [ThinkSNS](https://thinksns.com)
-i was fully responsible for the open source project.
-He also led the team to complete several large projects:
+**Entrepreneur (2019-Present)**
+Founded Odroe Inc. with a focus on open source innovation. Created industry-leading tools that serve thousands of developers worldwide.
 
-* 浙江卫视 - 中国蓝 App 后端 + 管理后台
-* [华为心声社区＋华为微博](https://xinsheng.huawei.com)
-* 美的集团社区
+## Featured Open Source Projects
 
-> There are others, but I'm only listing a few of the larger ones.
+**[Prisma Dart](https://prisma.pub)** - Auto-generated, type-safe ORM for Dart
+The most comprehensive Prisma implementation outside of JavaScript, maintaining API consistency while leveraging Dart's strong typing system.
 
-Four years have passed in a flash (2019). For some unspeakable reasons,
-I left 「智艺创想」 and started my own business (Odroe Inc.), and my entrepreneurial direction is open source.
+**[Spry](https://spry.fun)** - Lightweight, composable Dart web framework
+Designed for modern web development with cross-platform runtime support and exceptional performance.
 
-So far, my successful open source projects are:
+## Current Focus
 
-* [Prisma Dart](https://prisma.pub) - Prisma Client Dart is an auto-generated type-safe ORM. It uses Prisma Engine as the data access layer and is as consistent as possible with the Prisma Client JS/TS APIs.
-* [Spry](https://spry.fun) - A lightweight, composable Dart web framework designed to work collaboratively with various runtime platforms.
+As CEO and lead engineer at Odroe, I balance strategic leadership with hands-on development, focusing on:
 
-## How It's Going
+- Open source tool development and maintenance
+- Customer relationship management and technical consulting
+- Building sustainable business models around open source software
 
-I am currently the CEO and engineer at Odroe. I spend most of my time
-maintaining customer relationships, producing open source software,
-and serving and developing for my customers.
+## Technology Stack
 
-## Technology
+**Core Languages**
+Dart • JavaScript/TypeScript • Rust • Zig • Swift
 
-* Programming languages: Dart, JS/TS, Rust, Zig, Swift, Golang, CSS/HTML
-* Frameworks: Flutter, Vue/Nuxt.js, React/Next.js, Svelte/SvelteKit, Nest.js, Express/Koa, Spry, Tailwind CSS amd more...
-* Others: Prisma, Docker, tokio, Zed, Git and more...
+**Frontend & Mobile**
+Flutter • Vue.js/Nuxt.js • React/Next.js • Svelte/SvelteKit • Tailwind CSS
+
+**Backend & Infrastructure**
+Nest.js • Express/Koa • Spry • Prisma • Docker • H3/Nitro
+
+**Currently Exploring**
+Git • Zed Editor

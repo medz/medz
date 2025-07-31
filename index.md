@@ -38,22 +38,28 @@ import { VPTeamPageTitle } from 'vitepress/theme';
 I started programming at age 12 with Visual Basic, driven by curiosity about how websites work. This led me to explore PHP, HTML, CSS, and JavaScript, eventually becoming a recognized plugin and template developer in the PHPWind community.
 
 **CTO Experience (2015-2019)**
-Joined 智艺创想 in Chengdu as CTO, where I architected and maintained [ThinkSNS](https://thinksns.com), generating millions in annual revenue. Led development teams on major projects including:
+Joined 智艺创想 in Chengdu as CTO, where I architected and maintained ThinkSNS, generating millions in annual revenue. Led development teams on major projects including:
 
 - 浙江卫视 - 中国蓝 App backend & admin system
-- [Huawei Xinsheng Community + Huawei Weibo](https://xinsheng.huawei.com)
+- Huawei Xinsheng Community + Huawei Weibo
 - Midea Group Community Platform
 
 **Entrepreneur (2019-Present)**
 Founded Odroe Inc. with a focus on open source innovation. Created industry-leading tools that serve thousands of developers worldwide.
 
-## Featured Open Source Projects
+## Core Open Source Projects
 
-**[Prisma Dart](https://prisma.pub)** - Auto-generated, type-safe ORM for Dart
+**[Prisma Dart](https://prisma.pub)** - Auto-generated, type-safe ORM  
 The most comprehensive Prisma implementation outside of JavaScript, maintaining API consistency while leveraging Dart's strong typing system.
 
-**[Spry](https://spry.fun)** - Lightweight, composable Dart web framework
-Designed for modern web development with cross-platform runtime support and exceptional performance.
+**[Alien Signals Dart](https://github.com/medz/alien-signals-dart)** - Lightest signal library  
+Ultra-lightweight reactive signal library, Dart implementation of alien-signals for efficient state management.
+
+**[Spry](https://spry.fun)** - Lightweight web framework  
+Composable Dart web framework designed for modern development with cross-platform runtime support.
+
+**[Oxy](https://github.com/medz/oxy)** - Modern HTTP client  
+Feature-rich HTTP client with Web API compatibility, supporting fetch-like syntax and cross-platform adapters.
 
 ## Current Focus
 

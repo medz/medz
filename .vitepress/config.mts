@@ -51,6 +51,9 @@ export default defineConfig({
       // { text: "Meeting", link: "/meeting" },
       // { text: "Sponsors", link: "/sponsors" },
     ],
-    socialLinks: [{ icon: "github", link: "https://github.com/medz" }],
+    socialLinks: [
+      { icon: "github", link: "https://github.com/medz" },
+      { icon: "x", link: "https://x.com/shiweidu" },
+    ],
   },
 });

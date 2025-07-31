@@ -49,16 +49,16 @@ Founded Odroe Inc. with a focus on open source innovation. Created industry-lead
 
 ## Core Open Source Projects
 
-**[Prisma Dart](https://prisma.pub)** - Auto-generated, type-safe ORM  
+**[Prisma Dart](https://prisma.pub)** - Auto-generated, type-safe ORM
 The most comprehensive Prisma implementation outside of JavaScript, maintaining API consistency while leveraging Dart's strong typing system.
 
-**[Alien Signals Dart](https://github.com/medz/alien-signals-dart)** - Lightest signal library  
+**[Alien Signals Dart](https://github.com/medz/alien-signals-dart)** - Lightest signal library
 Ultra-lightweight reactive signal library, Dart implementation of alien-signals for efficient state management.
 
-**[Spry](https://spry.fun)** - Lightweight web framework  
+**[Spry](https://spry.fun)** - Lightweight web framework
 Composable Dart web framework designed for modern development with cross-platform runtime support.
 
-**[Oxy](https://github.com/medz/oxy)** - Modern HTTP client  
+**[Oxy](https://github.com/medz/oxy)** - Modern HTTP client
 Feature-rich HTTP client with Web API compatibility, supporting fetch-like syntax and cross-platform adapters.
 
 ## Current Focus
@@ -66,25 +66,27 @@ Feature-rich HTTP client with Web API compatibility, supporting fetch-like synta
 As CEO of Odroe Inc. and Engineer at Panony, I balance multiple roles across different domains:
 
 **Open Source Development**
+
 - Maintaining and evolving core Dart ecosystem projects
 - Building sustainable business models around open source software
 - Community engagement and developer relations
 
 **Web3 & Blockchain Media**
+
 - Technical development and infrastructure for PANews platform
 - Supporting Asia's leading blockchain media operations
 - Bridging technology and media in the Web3 space
 
 ## Technology Stack
 
-**Core Languages**
+**Core Languages:**
 Dart • JavaScript/TypeScript • Rust • Zig • Swift
 
-**Frontend & Mobile**
+**Frontend & Mobile:**
 Flutter • Vue.js/Nuxt.js • React/Next.js • Svelte/SvelteKit • Tailwind CSS
 
-**Backend & Infrastructure**
+**Backend & Infrastructure:**
 Nest.js • Express/Koa • Spry • Prisma • Docker • H3/Nitro
 
-**Currently Exploring**
+**Currently Exploring:**
 Git • Zed Editor

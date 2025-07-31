@@ -33,12 +33,12 @@ import { VPTeamPageTitle } from 'vitepress/theme';
   <template #title>
       <span class="uppercase">about me</span>
   </template>
-  <template #lead>Passionate developer since 2005 • Open source advocate • CEO at Odroe Inc.</template>
+  <template #lead>Passionate developer • Open source advocate • CEO at Odroe Inc.</template>
 </VPTeamPageTitle>
 
 ## My Journey
 
-**Early Years (2005-2014)**
+**Early Years**
 I started programming at age 12 with Visual Basic, driven by curiosity about how websites work. This led me to explore PHP, HTML, CSS, and JavaScript, eventually becoming a recognized plugin and template developer in the PHPWind community.
 
 **CTO Experience (2015-2019)**

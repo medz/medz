@@ -2,7 +2,7 @@
 
 > Keep calm and coding.
 
-I'm Seven Du, an Open Source Entrepreneur and CEO of [Odroe Inc](https://github.com/odroe). Since 2025, also serving as Engineer at Panony, responsible for PANews - Asia's leading Web3 and blockchain news media platform.
+I'm Seven Du, an Open Source Entrepreneur and Founder of [Odroe Inc](https://github.com/odroe). Since 2025, also serving as Engineer at Panony, responsible for PANews - Asia's leading Web3 and blockchain news media platform.
 
 Motto: **if(true == false) false = true**
 

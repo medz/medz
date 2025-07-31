@@ -33,7 +33,7 @@ import { VPTeamPageTitle } from 'vitepress/theme';
   <template #title>
       <span class="uppercase">about me</span>
   </template>
-  <template #lead>Passionate developer • Open source advocate • CEO at Odroe Inc.</template>
+  <template #lead>Passionate developer • Open source advocate • Founder at Odroe Inc.</template>
 </VPTeamPageTitle>
 
 ## My Journey
@@ -70,7 +70,7 @@ Feature-rich HTTP client with Web API compatibility, supporting fetch-like synta
 
 ## Current Focus
 
-As CEO of Odroe Inc. and Engineer at Panony, I balance multiple roles across different domains:
+As Founder of Odroe Inc. and Engineer at Panony, I balance multiple roles across different domains:
 
 **Open Source Development**
 

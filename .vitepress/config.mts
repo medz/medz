@@ -1,6 +1,9 @@
 import { defineConfig } from "vitepress";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  vite: { plugins: [tailwindcss()] },
+
   srcExclude: ["README.md"],
   title: "Seven Du",
   description: "Seven Du's Portfolio",

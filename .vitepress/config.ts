@@ -5,8 +5,9 @@ export default defineConfig({
   vite: { plugins: [tailwindcss()] },
 
   srcExclude: ["README.md"],
-  title: "Seven Du",
-  description: "Seven Du's Portfolio",
+  title: "Seven Du, GitHub: @medz · X: @shiweidu",
+  description:
+    "I'm Seven Du, an Open Source Entrepreneur and Founder of Odroe Inc. Since 2025, also serving as Engineer at Panony, responsible for PANews. GitHub: @medz · X: @shiweidu",
   cleanUrls: true,
   head: [
     [

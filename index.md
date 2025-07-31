@@ -93,4 +93,4 @@ Flutter • Vue.js/Nuxt.js • React/Next.js • Svelte/SvelteKit • Tailwind C
 Nest.js • Express/Koa • Spry • Prisma • Docker • H3/Nitro
 
 **Currently Exploring:**
-Git • Zed Editor
+Git • Zed Editor • AI

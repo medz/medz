@@ -10,8 +10,10 @@ hero:
 ---
 
 <style>
+@reference "tailwindcss";
+
 .VPHome .VPHero .VPImage {
-  @apply rounded-3xl shadow;
+  @apply rounded-3xl shadow object-cover aspect-square w-full h-auto;
 }
 
 .VPHome .VPFeatures .VPFeature {
@@ -28,7 +30,9 @@ import { VPTeamPageTitle } from 'vitepress/theme';
 </script>
 
 <VPTeamPageTitle>
-  <template #title>About Me</template>
+  <template #title>
+      <span class="uppercase">about me</span>
+  </template>
   <template #lead>Passionate developer since 2005 • Open source advocate • CEO at Odroe Inc.</template>
 </VPTeamPageTitle>
 
@@ -47,7 +51,7 @@ Joined 智艺创想 in Chengdu as CTO, where I architected and maintained ThinkS
 **Entrepreneur (2019-Present)**
 Founded Odroe Inc. with a focus on open source innovation. Created industry-leading tools that serve thousands of developers worldwide. Currently also serving as Engineer at Panony, responsible for PANews - Asia's leading Web3 and blockchain media platform.
 
-## Core Open Source Projects
+## Open Source Projects
 
 **[Prisma Dart](https://prisma.pub)** - Auto-generated, type-safe ORM
 The most comprehensive Prisma implementation outside of JavaScript, maintaining API consistency while leveraging Dart's strong typing system.

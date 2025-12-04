@@ -1,0 +1,12 @@
+{
+  "name": "discord.medz.dev",
+  "private": true,
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "wrangler": "^4.52.1"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "account_id": "c6f985dcabef86de89d5846eeba7a13f",
+  "compatibility_date": "2025-12-04",
+  "name": "discord-server-redirect",
+  "main": "index.ts",
+  "route": { "custom_domain": true, "pattern": "discord.medz.dev" },
+}

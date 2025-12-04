@@ -8,7 +8,7 @@ Motto: **if(true == false) false = true**
 
 🇨🇳 Chengdu・👨🏻‍💻 Open Source Entrepreneur・🌐 Web3 Engineer
 
-E-Mail: [hi@medz.dev](mailto:hi@medz.dev) • Website: [medz.dev](https://medz.dev) • X: [@shiweidu](https://x.com/shiweidu)
+E-Mail: [hi@medz.dev](mailto:hi@medz.dev) • Website: [medz.dev](https://medz.dev) • X: [@shiweidu](https://x.com/shiweidu) • Discord: [discord.medz.dev](https://discord.medz.dev)
 
 ## Technology Stack
 

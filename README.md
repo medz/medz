@@ -2,7 +2,9 @@
 
 > Keep calm and coding.
 
-I'm Seven Du, an Open Source Entrepreneur and Founder of [Odroe Inc](https://github.com/odroe). Since 2025, also serving as Engineer at Panony, responsible for PANews - Asia's leading Web3 and blockchain news media platform.
+I'm Seven Du, a full-stack developer, open-source entrepreneur, and founder of [Odroe Inc](https://github.com/odroe). I build Dart and Flutter ecosystem tools, reactive libraries, server runtimes, and developer utilities.
+
+Currently working at Panony on PANews, while continuing to build open-source projects under [@medz](https://github.com/medz) and [@odroe](https://github.com/odroe).
 
 Motto: **if(true == false) false = true**
 
@@ -14,26 +16,10 @@ E-Mail: [hi@medz.dev](mailto:hi@medz.dev) • Website: [medz.dev](https://medz.d
 
 **Languages:** Dart • JavaScript/TypeScript • Rust • Zig • Swift
 
-**Frameworks:** Flutter • Vue.js/Nuxt.js • React/Next.js • Svelte/SvelteKit • Nest.js • Spry
+**Frameworks & Tools:** Flutter • Vue.js/Nuxt.js • React/Next.js • Svelte/SvelteKit • TanStack • Spry • Prisma • Cloudflare Workers
 
-<table>
-  <tr>
-    <td>
-      <a href="https://github.com/sponsors/medz">
-        <img align="center" src="https://github-readme-stats.vercel.app/api?username=medz&show_icons=true&include_all_commits=true&theme=transparent&hide_border=true&custom_title=Seven%27s%20GitHub%20Stats" alt="Seven's github stats" />
-      </a>
-    </td>
-    <td>
-      <a href="https://github.com/sponsors/medz">
-        <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=medz&layout=compact&theme=transparent&hide_border=true" />
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <a href="https://github.com/sponsors/medz#:~:text=Featured-,sponsors,-Current%20sponsors">
-        <img alt="Sponsors" src="https://github.com/medz/public/raw/main/sponsors.tiers.svg">
-      </a>
-    </td>
-  </tr>
-</table>
+## Sponsors
+
+<a href="https://github.com/sponsors/medz#:~:text=Featured-,sponsors,-Current%20sponsors">
+  <img alt="Sponsors" src="https://github.com/medz/public/raw/main/sponsors.tiers.svg">
+</a>

@@ -1,6 +1,7 @@
 ---
-import { ArrowUpRight } from '@lucide/astro';
-import { localPath, site, text, type Locale } from '../../data/site';
+import { ArrowUpRight, Printer } from '@lucide/astro';
+import { resume } from '../../data/resume';
+import { site, text, type Locale } from '../../data/site';
 interface Props {
   locale: Locale;
 }
@@ -9,141 +10,78 @@ const { locale } = Astro.props;
 
 <main id="main" class="resume">
   <div class="resume-topline">
-    <span class="mono">RESUME</span>
-    <a class="text-link" href={`mailto:${site.email}`}>
-      {text(locale, '联系我', 'Get in touch')}
-      <ArrowUpRight aria-hidden="true" />
-    </a>
+    <span class="mono">{text(locale, '个人简历', 'RÉSUMÉ')}</span>
+    <button class="text-link" type="button" data-print-resume>
+      <Printer aria-hidden="true" />
+      {text(locale, '打印 / 保存 PDF', 'Print / Save PDF')}
+    </button>
   </div>
   <div class="resume-layout">
     <header class="resume-heading">
       <div>
-        <h1>
-          Seven Du<span>.</span>
-        </h1>
-        <p>
-          {text(locale, '软件工程师 · 开源维护者', 'Software engineer · Open-source maintainer')}
-        </p>
+        <h1>Seven Du<span>.</span></h1>
+        <p>{text(locale, '全栈工程师 · 开源创业者', 'Full-stack Engineer · Open-source Founder')}</p>
+        <p class="resume-location">{text(locale, '中国 · 成都', 'Chengdu, China')}</p>
       </div>
       <div class="resume-links">
         <a href={`mailto:${site.email}`}>{site.email}</a>
-        <a href={site.github} target="_blank" rel="noopener noreferrer">
-          github.com/medz
-          <ArrowUpRight aria-hidden="true" />
-        </a>
+        <a href={site.url}>medz.dev</a>
+        <a href={site.github}>github.com/medz</a>
       </div>
     </header>
     <div class="resume-body">
       <section class="resume-section">
-        <h2>{text(locale, '关于我', 'About me')}</h2>
+        <h2>{text(locale, '个人简介', 'Profile')}</h2>
         <div class="resume-section-content">
-          <p class="resume-intro">
-            {text(
-              locale,
-              '关注清晰的 API、可靠的系统与长期可维护的工程。',
-              'I care about clear APIs, reliable systems, and software built to last.',
-            )}
-            <br />
-            {text(
-              locale,
-              '在语言、运行时与 Web 之间，寻找直接、实用的解决方案。',
-              'Finding direct, practical solutions across languages, runtimes, and the web.',
-            )}
-          </p>
+          <p class="resume-intro">{resume.summary[locale]}</p>
         </div>
       </section>
       <section class="resume-section">
-        <h2>{text(locale, '开源项目', 'Open source')}</h2>
+        <h2>{text(locale, '工作经历', 'Experience')}</h2>
         <div class="resume-section-content">
-          <div class="resume-project">
-            <div class="resume-project-heading">
-              <a href={localPath('alien-signals', locale)}>
-                alien-signals
-                <ArrowUpRight aria-hidden="true" />
-              </a>
-              <span class="mono">DART / REACTIVITY</span>
-            </div>
-            <p>
-              {text(
-                locale,
-                'Dart 响应式内核。围绕 signal、computed 和 effect，提供直接、可组合的状态表达。',
-                'A reactive core for Dart. Direct, composable state through signal, computed, and effect.',
-              )}
-            </p>
-            <ul>
-              <li>
-                {text(
-                  locale,
-                  '关注依赖追踪、惰性计算与副作用清理。',
-                  'Dependency tracking, lazy computation, and effect cleanup.',
-                )}
-              </li>
-              <li>
-                {text(
-                  locale,
-                  '通过可运行示例与文档呈现 API 的使用方式。',
-                  'APIs illustrated with runnable examples and documentation.',
-                )}
-              </li>
-            </ul>
-          </div>
-          <div class="resume-project">
-            <div class="resume-project-heading">
-              <a href={localPath('napi', locale)}>
-                napi
-                <ArrowUpRight aria-hidden="true" />
-              </a>
-              <span class="mono">DART / NATIVE</span>
-            </div>
-            <p>
-              {text(
-                locale,
-                '探索 Dart 与原生运行时的连接，关注跨平台集成、构建与分发。',
-                'Connecting Dart to native runtimes through cross-platform integration, builds, and distribution.',
-              )}
-            </p>
-          </div>
-          <div class="resume-project">
-            <div class="resume-project-heading">
-              <a href={localPath('dartc', locale)}>
-                dartc
-                <ArrowUpRight aria-hidden="true" />
-              </a>
-              <span class="mono">COMPILER / RUNTIME</span>
-            </div>
-            <p>
-              {text(
-                locale,
-                '探索 Dart 原生编译与自举，持续完善语言表达和执行基础。',
-                'Exploring native Dart compilation and self-hosting, with ongoing work on language semantics and execution.',
-              )}
-            </p>
-          </div>
+          {resume.experience.map((job) => (
+            <article class="resume-entry">
+              <div class="resume-entry-heading">
+                <h3>{job.url ? <a href={job.url}>{job.organization}</a> : job.organization}</h3>
+                <span class="resume-period mono">{job.start} - {job.end ?? text(locale, '至今', 'Present')}</span>
+              </div>
+              <p class="resume-role">{job.role[locale]}</p>
+              <ul>{job.highlights[locale].map((item) => <li>{item}</li>)}</ul>
+            </article>
+          ))}
         </div>
       </section>
       <section class="resume-section">
-        <h2>{text(locale, '技术方向', 'Technical focus')}</h2>
-        <div class="resume-section-content skill-rows">
-          <div>
-            <span>{text(locale, '语言', 'Languages')}</span>
-            <p>Dart / TypeScript / JavaScript</p>
-          </div>
-          <div>
-            <span>{text(locale, '系统', 'Systems')}</span>
-            <p>Web / Native / WebAssembly</p>
-          </div>
-          <div>
-            <span>{text(locale, '关注', 'Focus')}</span>
-            <p>
-              {text(
-                locale,
-                'API 设计 / 性能 / 开发者体验',
-                'API design / Performance / Developer experience',
-              )}
-            </p>
-          </div>
+        <h2>{text(locale, '技术能力', 'Technical skills')}</h2>
+        <dl class="resume-section-content resume-skills">
+          {resume.skills.map((skill) => (
+            <div>
+              <dt>{skill.label[locale]}</dt>
+              <dd>{skill.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+      <section class="resume-section resume-projects">
+        <h2>{text(locale, '代表项目', 'Selected work')}</h2>
+        <div class="resume-section-content">
+          {resume.projects.map((project) => (
+            <article class="resume-entry">
+              <div class="resume-entry-heading">
+                <h3><a href={project.url}>{project.name}<ArrowUpRight aria-hidden="true" /></a></h3>
+              </div>
+              <p class="resume-role">{project.category[locale]}</p>
+              <p class="resume-description">{project.description[locale]}</p>
+              <ul>{project.highlights[locale].map((item) => <li>{item}</li>)}</ul>
+              <a class="resume-source" href={project.url}>{project.url.replace('https://', '')}</a>
+            </article>
+          ))}
         </div>
       </section>
     </div>
   </div>
 </main>
+
+<script>
+  document.querySelector('[data-print-resume]')?.addEventListener('click', () => window.print());
+</script>

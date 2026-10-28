@@ -801,6 +801,10 @@ main {
   font-size: 13px;
   color: var(--muted);
 }
+.resume-heading .resume-location {
+  margin-top: 8px;
+  font-size: 11px;
+}
 .resume-links {
   display: flex;
   flex-direction: column;
@@ -814,10 +818,6 @@ main {
   display: flex;
   align-items: center;
   gap: 5px;
-}
-.resume-links svg {
-  width: 11px;
-  height: 11px;
 }
 .resume-section {
   display: grid;
@@ -839,60 +839,82 @@ main {
   line-height: 1.9;
   color: var(--muted);
 }
-.resume-project + .resume-project {
-  margin-top: 27px;
+.resume-entry + .resume-entry {
+  margin-top: 30px;
 }
-.resume-project-heading {
+.resume-entry-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 6px 18px;
 }
-.resume-project-heading > a {
-  display: flex;
-  align-items: center;
-  gap: 7px;
+.resume-entry-heading h3 {
   font-size: 17px;
   font-weight: 550;
   letter-spacing: -0.4px;
 }
-.resume-project-heading svg {
+.resume-entry-heading h3 a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.resume-entry-heading svg {
   width: 12px;
   height: 12px;
   color: var(--muted);
 }
-.resume-project-heading > .mono {
+.resume-period {
   color: var(--subtle);
+  white-space: nowrap;
 }
-.resume-project p {
+.resume-role {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.resume-description {
   margin-top: 10px;
   font-size: 14px;
   color: var(--muted);
   line-height: 1.9;
 }
-.resume-project ul {
+.resume-entry ul {
   margin: 9px 0 0;
   padding-left: 15px;
   font-size: 13px;
   line-height: 1.9;
   color: var(--muted);
 }
-.skill-rows > div {
+.resume-entry li + li {
+  margin-top: 4px;
+}
+.resume-source {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--subtle);
+  overflow-wrap: anywhere;
+}
+.resume-skills {
+  margin: 0;
+}
+.resume-skills > div {
   display: grid;
-  grid-template-columns: 56px minmax(0, 1fr);
+  grid-template-columns: 112px minmax(0, 1fr);
   gap: 18px;
   font-size: 13px;
   line-height: 1.8;
 }
-.skill-rows > div + div {
+.resume-skills > div + div {
   margin-top: 9px;
 }
-.skill-rows > div > span {
+.resume-skills dt {
   font-size: 11px;
   color: var(--subtle);
 }
-.skill-rows p {
+.resume-skills dd {
+  margin: 0;
   color: var(--muted);
 }
 .not-found {
@@ -1029,12 +1051,6 @@ main {
     margin-bottom: 18px;
     font-size: 12px;
     color: var(--subtle);
-  }
-  .resume-project-heading {
-    justify-content: flex-start;
-  }
-  .resume-project + .resume-project {
-    margin-top: 30px;
   }
 }
 @container site (min-width: 1280px) {
@@ -1258,11 +1274,14 @@ main {
     color: var(--subtle);
     font-size: 11px;
   }
-  :is(.resume-intro, .resume-project p) {
+  :is(.resume-intro, .resume-description) {
     font-size: 13px;
   }
-  .resume-project-heading {
+  .resume-entry-heading {
     gap: 6px 12px;
+  }
+  .resume-skills > div {
+    display: block;
   }
   .site-footer {
     flex-wrap: wrap;
@@ -1327,7 +1346,12 @@ main {
   }
 }
 @media print {
-  :root {
+  @page {
+    size: A4;
+    margin: 16mm;
+  }
+  :root,
+  :root[data-theme] {
     color-scheme: light;
   }
   .site-header,
@@ -1337,13 +1361,119 @@ main {
     display: none;
   }
   .site-shell {
+    display: block;
+    container-type: normal;
     min-height: 0;
   }
   .resume {
     max-width: none;
     padding: 0;
   }
+  .resume-layout,
+  .resume-body {
+    display: block;
+  }
+  .resume-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 12mm;
+    padding: 0 0 6mm;
+    border-bottom: 1pt solid #18181b;
+  }
+  .resume-heading h1 {
+    font-size: 30pt;
+    letter-spacing: -1.5pt;
+  }
+  .resume-heading p {
+    margin-top: 3mm;
+    font-size: 10pt;
+  }
+  .resume-heading .resume-location {
+    margin-top: 2mm;
+    font-size: 9pt;
+  }
+  .resume-links {
+    align-items: flex-end;
+    flex-shrink: 0;
+    margin: 0;
+    gap: 1mm;
+    font-size: 9pt;
+  }
   .resume-section {
+    display: block;
+    padding: 3mm 0;
+    border: 0;
+  }
+  .resume-section > h2 {
+    margin-bottom: 2.5mm;
+    font-size: 10pt;
+    font-weight: 650;
+    color: #18181b;
+    break-after: avoid;
+  }
+  .resume-entry {
     break-inside: avoid;
+  }
+  .resume-entry + .resume-entry {
+    margin-top: 4mm;
+  }
+  .resume-entry-heading h3 {
+    font-size: 11pt;
+    letter-spacing: 0;
+  }
+  .resume-period,
+  .resume-role,
+  .resume-source {
+    font-size: 9pt;
+  }
+  .resume-role {
+    margin-top: 1mm;
+  }
+  .resume-intro,
+  .resume-description,
+  .resume-entry ul,
+  .resume-skills > div {
+    font-size: 10pt;
+    line-height: 1.4;
+    color: #333;
+  }
+  .resume-description,
+  .resume-entry ul {
+    margin-top: 1.5mm;
+  }
+  .resume-entry li + li {
+    margin-top: 1mm;
+  }
+  .resume-source {
+    margin-top: 1.5mm;
+  }
+  .resume-skills {
+    break-inside: avoid;
+  }
+  .resume-projects {
+    break-before: page;
+    padding-top: 0;
+  }
+  .resume-skills > div {
+    display: grid;
+    grid-template-columns: 30mm minmax(0, 1fr);
+    gap: 4mm;
+    break-inside: avoid;
+  }
+  .resume-skills > div + div {
+    margin-top: 2mm;
+  }
+  .resume-skills dt {
+    font-size: 9pt;
+  }
+  .resume svg,
+  .resume-heading h1 > span {
+    display: none;
+  }
+  .resume p,
+  .resume li {
+    orphans: 3;
+    widows: 3;
   }
 }

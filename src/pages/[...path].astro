@@ -6,6 +6,7 @@ import Projects from '../components/pages/Projects.astro';
 import Resume from '../components/pages/Resume.astro';
 import ProjectPage from '../components/pages/Project.astro';
 import { projects, type Project } from '../data/projects';
+import { resume } from '../data/resume';
 import { locales, localPath, text, type Locale } from '../data/site';
 
 type Page = 'home' | 'projects' | 'resume' | 'project';
@@ -43,17 +44,19 @@ const title =
         : `${project?.slug} — medz.dev`;
 const description =
   project?.about[locale] ??
-  (page === 'projects'
-    ? text(
-        locale,
-        '从语言与运行时，到 Web 与开发工具。这里是我持续打磨的开源项目。',
-        'Open-source projects across languages, runtimes, the web, and developer tools.',
-      )
-    : text(
-        locale,
-        '我是 Seven。写代码，也打磨想法。关注语言、运行时与 Web，构建小而专注的工具。',
-        'I’m Seven. Writing code, refining ideas, and building small, focused tools across languages, runtimes, and the web.',
-      ));
+  (page === 'resume'
+    ? resume.summary[locale]
+    : page === 'projects'
+      ? text(
+          locale,
+          '从语言与运行时，到 Web 与开发工具。这里是我持续打磨的开源项目。',
+          'Open-source projects across languages, runtimes, the web, and developer tools.',
+        )
+      : text(
+          locale,
+          '我是 Seven。写代码，也打磨想法。关注语言、运行时与 Web，构建小而专注的工具。',
+          'I’m Seven. Writing code, refining ideas, and building small, focused tools across languages, runtimes, and the web.',
+        ));
 ---
 
 <Site

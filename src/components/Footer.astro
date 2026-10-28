@@ -1,0 +1,24 @@
+---
+import { ArrowUpRight } from '@lucide/astro';
+import { site, text, type Locale } from '../data/site';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<footer class="site-footer">
+  <span>
+    © {new Date().getFullYear()} {site.name}
+  </span>
+  <span class="footer-right">
+    {text(locale, '保持简单，保持好奇。', 'Stay simple. Stay curious.')}
+    <span class="footer-dot" aria-hidden="true">
+      ·
+    </span>
+    <a href={site.github} target="_blank" rel="noopener noreferrer">
+      GitHub
+      <ArrowUpRight aria-hidden="true" />
+    </a>
+  </span>
+</footer>

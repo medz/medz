@@ -1,0 +1,97 @@
+[
+  {
+    "slug": "alien-signals",
+    "repo": "medz/alien-signals-dart",
+    "category": "Reactivity",
+    "description": {
+      "zh": "小巧的响应式内核，清晰的状态表达。",
+      "en": "A small reactive core. A clear way to express state."
+    },
+    "about": {
+      "zh": "轻量、细粒度的响应式内核。用简单的原语，表达变化之间的关系。",
+      "en": "A lightweight, fine-grained reactive core. Simple primitives for expressing how values change together."
+    },
+    "focus": {
+      "zh": ["清晰、可组合的状态表达", "依赖追踪与惰性计算", "副作用的生命周期与清理"],
+      "en": [
+        "Clear, composable state",
+        "Dependency tracking and lazy computation",
+        "Effect lifecycles and cleanup"
+      ]
+    },
+    "docs": "https://pub.dev/documentation/alien_signals/latest/"
+  },
+  {
+    "slug": "napi",
+    "repo": "medz/napi",
+    "category": "Native",
+    "description": {
+      "zh": "让 Dart 与原生能力相遇。",
+      "en": "Where Dart meets native capabilities."
+    },
+    "about": {
+      "zh": "围绕 Dart 与原生运行时的连接，探索跨平台集成、构建和分发。",
+      "en": "Connecting Dart to native runtimes, with a focus on cross-platform integration, builds, and distribution."
+    },
+    "focus": {
+      "zh": ["Dart 与原生运行时的连接", "跨平台构建与分发", "自然的开发者体验"],
+      "en": [
+        "Connecting Dart and native runtimes",
+        "Cross-platform builds and distribution",
+        "A natural developer experience"
+      ]
+    },
+    "docs": "https://pub.dev/documentation/napi/latest/"
+  },
+  {
+    "slug": "dartc",
+    "repo": "medz/dartc",
+    "category": "Compiler",
+    "description": {
+      "zh": "用 Dart，探索语言与运行时。",
+      "en": "Exploring language and runtime, in Dart."
+    },
+    "about": {
+      "zh": "探索 Dart 原生编译与自举，持续完善语言表达和执行基础。",
+      "en": "An exploration of native Dart compilation and self-hosting, with ongoing work on language semantics and execution foundations."
+    },
+    "focus": {
+      "zh": ["语言表达与语义", "原生编译与执行", "编译器自举"],
+      "en": ["Language semantics", "Native compilation and execution", "Compiler self-hosting"]
+    }
+  },
+  {
+    "slug": "any",
+    "repo": "odroe/any",
+    "category": "Workflow",
+    "description": {
+      "zh": "组合业务流程，让异步逻辑更直观。",
+      "en": "Composable workflows. Clearer asynchronous logic."
+    },
+    "about": {
+      "zh": "探索直接、可组合的业务流程表达，让成功、失败和恢复路径保持清晰。",
+      "en": "Direct, composable workflows that keep success, failure, and recovery paths clear."
+    },
+    "focus": {
+      "zh": ["可组合的业务流程", "显式的失败与恢复路径", "直接、自然的 API"],
+      "en": ["Composable workflows", "Explicit failure and recovery paths", "Direct, natural APIs"]
+    }
+  },
+  {
+    "slug": "oh",
+    "repo": "medz/oh",
+    "category": "SQL",
+    "description": {
+      "zh": "探索更自然的 SQL 开发体验。",
+      "en": "A more natural way to work with SQL."
+    },
+    "about": {
+      "zh": "围绕 Dart 中的 SQL 编写与开发工具体验，探索轻量、自然的集成方式。",
+      "en": "Exploring lightweight SQL authoring and developer tooling for Dart."
+    },
+    "focus": {
+      "zh": ["SQL 编写体验", "Dart 开发工具集成", "轻量、清晰的接口"],
+      "en": ["SQL authoring", "Dart developer tooling", "Lightweight, clear interfaces"]
+    }
+  }
+]

@@ -1,0 +1,108 @@
+---
+import { ArrowLeft, ArrowUpRight, Star } from '@lucide/astro';
+import type { Project } from '../../data/projects';
+import { dateLabel, localPath, text, type Locale } from '../../data/site';
+interface Props {
+  project: Project;
+  locale: Locale;
+}
+const { project: p, locale } = Astro.props;
+---
+
+<main id="main" class="project-home">
+  <nav class="project-context" aria-label={text(locale, '项目导航', 'Project navigation')}>
+    <a class="back-link" href={localPath('projects', locale)}>
+      <ArrowLeft aria-hidden="true" />
+      {text(locale, '全部项目', 'All projects')}
+    </a>
+    <span>{p.slug}</span>
+  </nav>
+  <header class="project-hero">
+    <div class="project-hero-copy">
+      <span class="mono">
+        {p.language} / {p.category}
+      </span>
+      <h1>{p.slug}</h1>
+      <p>{p.about[locale]}</p>
+      <div class="project-actions">
+        <a class="primary-action" href={p.docsUrl} target="_blank" rel="noopener noreferrer">
+          {text(locale, '阅读文档', 'Read the docs')}
+          <ArrowUpRight aria-hidden="true" />
+        </a>
+        <a class="text-link" href={p.source} target="_blank" rel="noopener noreferrer">
+          GitHub
+          <ArrowUpRight aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+    <dl class="project-facts">
+      <div>
+        <dt>{text(locale, '最近更新', 'Recently updated')}</dt>
+        <dd>
+          <time datetime={p.updatedAt}>{dateLabel(p.updatedAt)}</time>
+        </dd>
+      </div>
+      <div>
+        <dt>{text(locale, '仓库', 'Repository')}</dt>
+        <dd>
+          <a href={p.source} target="_blank" rel="noopener noreferrer">
+            {p.repo}
+          </a>
+        </dd>
+      </div>
+      {p.license && (
+        <div>
+          <dt>{text(locale, '许可证', 'License')}</dt>
+          <dd>{p.license}</dd>
+        </div>
+      )}
+      <div>
+        <dt>GitHub Stars</dt>
+        <dd>
+          <a
+            class="project-stars"
+            href={`${p.source}/stargazers`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Star aria-hidden="true" />
+            {p.stars}
+          </a>
+        </dd>
+      </div>
+    </dl>
+  </header>
+  <div class="project-body">
+    <section class="project-focus" aria-labelledby="focus-title">
+      <span class="mono">IN FOCUS</span>
+      <h2 id="focus-title">{text(locale, '小而专注。', 'Small and focused.')}</h2>
+      <p>{p.description[locale]}</p>
+      <ul>
+        {p.focus[locale].map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </section>
+    <aside class="project-guide">
+      <h2>{text(locale, '从这里开始', 'Start here')}</h2>
+      <a href={p.docsUrl} target="_blank" rel="noopener noreferrer">
+        <span>{text(locale, '阅读文档', 'Read the docs')}</span>
+        <ArrowUpRight aria-hidden="true" />
+      </a>
+      <a href={p.source} target="_blank" rel="noopener noreferrer">
+        <span>{text(locale, '浏览源码', 'Browse source')}</span>
+        <ArrowUpRight aria-hidden="true" />
+      </a>
+      {p.packageUrl && (
+        <a href={p.packageUrl} target="_blank" rel="noopener noreferrer">
+          <span>pub.dev</span>
+          <ArrowUpRight aria-hidden="true" />
+        </a>
+      )}
+      <a href={`${p.source}/issues`} target="_blank" rel="noopener noreferrer">
+        <span>{text(locale, '问题与建议', 'Issues and ideas')}</span>
+        <ArrowUpRight aria-hidden="true" />
+      </a>
+    </aside>
+  </div>
+</main>

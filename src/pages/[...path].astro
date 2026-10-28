@@ -1,0 +1,70 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Site from '../layouts/Site.astro';
+import Home from '../components/pages/Home.astro';
+import Projects from '../components/pages/Projects.astro';
+import Resume from '../components/pages/Resume.astro';
+import ProjectPage from '../components/pages/Project.astro';
+import { projects, type Project } from '../data/projects';
+import { locales, text, type Locale } from '../data/site';
+
+type Page = 'home' | 'projects' | 'resume' | 'project';
+interface Props {
+  locale: Locale;
+  page: Page;
+  path: string;
+  project?: Project;
+}
+
+export const getStaticPaths = (() =>
+  locales.flatMap((locale) => {
+    const pages = [
+      { path: '', page: 'home' },
+      { path: 'projects', page: 'projects' },
+      { path: 'resume', page: 'resume' },
+      ...projects.map((project) => ({ path: project.slug, page: 'project', project })),
+    ];
+    return pages.map((page) => ({
+      params: {
+        path: [locale === 'en' ? 'en' : '', page.path].filter(Boolean).join('/') || undefined,
+      },
+      props: { ...page, locale },
+    }));
+  })) satisfies GetStaticPaths;
+
+const { locale, page, path, project } = Astro.props;
+const title =
+  page === 'home'
+    ? 'Seven Du — Build with intention.'
+    : page === 'projects'
+      ? `${text(locale, '项目', 'Projects')} — medz.dev`
+      : page === 'resume'
+        ? `${text(locale, '简历', 'Résumé')} — Seven Du`
+        : `${project?.slug} — medz.dev`;
+const description =
+  project?.about[locale] ??
+  (page === 'projects'
+    ? text(
+        locale,
+        '从语言与运行时，到 Web 与开发工具。这里是我持续打磨的开源项目。',
+        'Open-source projects across languages, runtimes, the web, and developer tools.',
+      )
+    : text(
+        locale,
+        '我是 Seven。写代码，也打磨想法。关注语言、运行时与 Web，构建小而专注的工具。',
+        'I’m Seven. Writing code, refining ideas, and building small, focused tools across languages, runtimes, and the web.',
+      ));
+---
+
+<Site
+  locale={locale}
+  path={path}
+  active={page === 'project' ? 'projects' : page}
+  title={title}
+  description={description}
+>
+  {page === 'home' && <Home locale={locale} />}
+  {page === 'projects' && <Projects locale={locale} />}
+  {page === 'resume' && <Resume locale={locale} />}
+  {page === 'project' && project && <ProjectPage locale={locale} project={project} />}
+</Site>

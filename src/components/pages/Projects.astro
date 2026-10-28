@@ -1,0 +1,45 @@
+---
+import ProjectCard from '../ProjectCard.astro';
+import { projects } from '../../data/projects';
+import { text, type Locale } from '../../data/site';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<main id="main" class="catalog">
+  <header class="catalog-header">
+    <div>
+      <span class="mono">OPEN SOURCE</span>
+      <h1>
+        Projects<span>.</span>
+      </h1>
+    </div>
+    <p>
+      {text(
+        locale,
+        '从语言与运行时，到 Web 与开发工具。',
+        'From languages and runtimes to the web and developer tools.',
+      )}
+      <br />
+      {text(
+        locale,
+        '这里是我持续打磨的开源项目。',
+        'A collection of open-source projects I keep refining.',
+      )}
+    </p>
+  </header>
+  <div class="catalog-topline">
+    <span>
+      {projects.length}
+      {text(locale, ' 个项目', ' projects')}
+    </span>
+    <span>{text(locale, '按最近更新', 'Latest updates first')}</span>
+  </div>
+  <div class="project-grid">
+    {projects.map((project) => (
+      <ProjectCard project={project} locale={locale} />
+    ))}
+  </div>
+</main>

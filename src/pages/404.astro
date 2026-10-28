@@ -1,0 +1,33 @@
+---
+import Site from '../layouts/Site.astro';
+import { ArrowRight } from '@lucide/astro';
+---
+
+<Site
+  locale="zh"
+  path=""
+  active="home"
+  title="页面未找到 — medz.dev"
+  description="这个地址还没有内容。This page could not be found."
+  noindex
+>
+  <main id="main" class="not-found">
+    <span class="mono">404 / NOT FOUND</span>
+    <h1>
+      这个地址，
+      <br />
+      <span>还没有故事。</span>
+    </h1>
+    <p lang="en">This page could not be found.</p>
+    <div>
+      <a class="text-link" href="/">
+        回到主页
+        <ArrowRight aria-hidden="true" />
+      </a>
+      <a class="text-link" href="/en/" lang="en">
+        Home in English
+        <ArrowRight aria-hidden="true" />
+      </a>
+    </div>
+  </main>
+</Site>

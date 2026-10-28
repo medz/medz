@@ -1,0 +1,28 @@
+---
+import { ArrowUpRight } from '@lucide/astro';
+import { site, text, type Locale } from '../data/site';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<section class="contact" aria-labelledby="contact-title">
+  <div>
+    <span class="mono contact-eyebrow">LET’S TALK</span>
+    <h2 id="contact-title">
+      {text(locale, '好想法，值得聊聊。', 'Good ideas start a conversation.')}
+    </h2>
+    <p>
+      {text(
+        locale,
+        '关于代码、开源，或者一个还没成形的想法。',
+        'About code, open source, or an idea still taking shape.',
+      )}
+    </p>
+  </div>
+  <a class="contact-link" href={`mailto:${site.email}`}>
+    {site.email}
+    <ArrowUpRight aria-hidden="true" />
+  </a>
+</section>

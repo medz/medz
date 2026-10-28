@@ -6,7 +6,7 @@ import Projects from '../components/pages/Projects.astro';
 import Resume from '../components/pages/Resume.astro';
 import ProjectPage from '../components/pages/Project.astro';
 import { projects, type Project } from '../data/projects';
-import { locales, text, type Locale } from '../data/site';
+import { locales, localPath, text, type Locale } from '../data/site';
 
 type Page = 'home' | 'projects' | 'resume' | 'project';
 interface Props {
@@ -26,7 +26,7 @@ export const getStaticPaths = (() =>
     ];
     return pages.map((page) => ({
       params: {
-        path: [locale === 'en' ? 'en' : '', page.path].filter(Boolean).join('/') || undefined,
+        path: localPath(page.path, locale).slice(1, -1) || undefined,
       },
       props: { ...page, locale },
     }));

@@ -1,4 +1,4 @@
-export const locales = ['zh', 'en'] as const;
+export const locales = ['en', 'zh'] as const;
 export type Locale = (typeof locales)[number];
 
 export const site = {
@@ -12,7 +12,7 @@ export const text = (locale: Locale, zh: string, en: string) => (locale === 'zh'
 
 export function localPath(path: string, locale: Locale) {
   const clean = path.replace(/^\/+|\/+$/g, '');
-  return `${locale === 'en' ? '/en' : ''}/${clean ? `${clean}/` : ''}`;
+  return `${locale === 'zh' ? '/zh' : ''}/${clean ? `${clean}/` : ''}`;
 }
 
 export function dateLabel(value: string) {

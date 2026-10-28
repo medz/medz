@@ -1317,25 +1317,6 @@ main {
     min-height: 44px;
   }
 }
-@view-transition {
-  navigation: auto;
-}
-@keyframes page-in {
-  from {
-    opacity: 0.2;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-::view-transition-group(root) {
-  animation-duration: 0.2s;
-}
-::view-transition-new(root) {
-  animation: page-in 0.22s ease-out both;
-}
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1343,11 +1324,6 @@ main {
     transition: none !important;
     animation: none !important;
     scroll-behavior: auto !important;
-  }
-  ::view-transition-group(root),
-  ::view-transition-new(root),
-  ::view-transition-old(root) {
-    animation: none !important;
   }
 }
 @media print {

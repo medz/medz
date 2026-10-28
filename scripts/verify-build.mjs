@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { resolve, relative } from 'node:path';
 import { gzipSync } from 'node:zlib';
+import { runInNewContext } from 'node:vm';
 
 const root = resolve('dist');
 const files = await readdir(root, { recursive: true });
@@ -29,18 +30,62 @@ async function checkLink(value, from) {
   }
 }
 
+const redirects = new Map([...pages].filter(([path]) => path.startsWith('/en/')));
+const contentPages = new Map([...pages].filter(([path]) => !redirects.has(path)));
+
 for (const [path, html] of pages) {
-  assert.equal([...html.matchAll(/<h1(?:\s|>)/g)].length, 1, `${path} needs one main heading`);
-  const english = path.startsWith('/en/');
-  assert(html.includes(`lang="${english ? 'en' : 'zh-CN'}"`), `Wrong language: ${path}`);
-  if (path !== '/404.html') {
+  const english = !path.startsWith('/zh/');
+  assert(html.includes(`<html lang="${english ? 'en' : 'zh-CN'}"`), `Wrong language: ${path}`);
+  if (redirects.has(path)) {
+    const target = path.slice(3);
+    assert(contentPages.has(target), `Missing redirect target: ${path}`);
+    assert(html.includes(`rel="canonical" href="${origin}${target}"`));
+    assert(html.includes('name="robots" content="noindex"'));
+    assert(
+      html.includes(`http-equiv="refresh" content="0;url=${target}"`),
+      `Missing no-JavaScript redirect: ${path}`,
+    );
+    const scripts = [...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)]
+      .map((match) => match[1])
+      .join('\n');
+    for (const [search, hash] of [['', ''], ['?ref=docs&name=a%26b', '#main']]) {
+      let destination;
+      runInNewContext(scripts, {
+        window: {
+          location: {
+            search,
+            hash,
+            replace(value) { destination = value; },
+          },
+        },
+      });
+      assert.equal(destination, `${target}${search}${hash}`, `Wrong redirect: ${path}`);
+    }
+  } else {
+    assert.equal([...html.matchAll(/<h1(?:\s|>)/g)].length, 1, `${path} needs one main heading`);
+  }
+  if (!redirects.has(path) && path !== '/404.html') {
     assert(
       html.includes(`rel="canonical" href="${origin}${path}"`),
       `Wrong canonical URL: ${path}`,
     );
-    const counterpart = english ? path.slice(3) : `/en${path}`;
-    assert(pages.has(counterpart), `Missing translation: ${path}`);
+    const counterpart = english ? `/zh${path}` : path.slice(3);
+    const englishPath = english ? path : counterpart;
+    const chinesePath = english ? counterpart : path;
+    assert(contentPages.has(counterpart), `Missing translation: ${path}`);
     assert(html.includes(`href="${counterpart}"`), `Missing language switch: ${path}`);
+    for (const [language, target] of [
+      ['en', englishPath],
+      ['zh-CN', chinesePath],
+      ['x-default', englishPath],
+    ]) {
+      assert(
+        html.includes(`hreflang="${language}" href="${origin}${target}"`),
+        `Wrong language alternative on ${path}: ${language}`,
+      );
+    }
+    assert(redirects.has(`/en${englishPath}`), `Missing English alias: ${englishPath}`);
+    assert(!html.includes('href="/en/'), `Page links to an English alias: ${path}`);
   }
   for (const [, value] of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) await checkLink(value, path);
 }
@@ -49,11 +94,12 @@ const sitemap = await readFile(resolve(root, 'sitemap.xml'), 'utf8');
 const locations = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
 assert.equal(
   new Set(locations).size,
-  pages.size - 1,
+  contentPages.size - 1,
   'Sitemap must contain every public page once',
 );
 for (const location of locations) {
   assert(!location.endsWith('/404.html'));
+  assert(!redirects.has(new URL(location).pathname), 'Sitemap must not contain redirects');
   await checkLink(location, '/sitemap.xml');
 }
 for (const file of files.filter((file) => file.endsWith('.css'))) {
@@ -72,7 +118,7 @@ const inlineScripts = [...pages.get('/').matchAll(/<script\b[^>]*>([\s\S]*?)<\/s
   .map((match) => match[1])
   .join('\n');
 console.log(
-  `Verified ${pages.size} HTML pages, ${locations.length} sitemap URLs, and all local links/assets.`,
+  `Verified ${contentPages.size} content pages, ${redirects.size} redirects, ${locations.length} sitemap URLs, and all local links/assets.`,
 );
 console.log(
   `Client JavaScript: ${scriptBytes + gzipSync(inlineScripts).length} bytes gzipped (including inline home-page scripts).`,

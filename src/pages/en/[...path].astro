@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { projects } from '../../data/projects';
+import { localPath, site } from '../../data/site';
+
+export const getStaticPaths = (() =>
+  ['', 'projects', 'resume', ...projects.map((project) => project.slug)].map((path) => ({
+    params: { path: path || undefined },
+  }))) satisfies GetStaticPaths;
+
+const target = localPath(Astro.params.path ?? '', 'en');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={new URL(target, site.url)} />
+    <title>Redirecting — medz.dev</title>
+    <script define:vars={{ target }}>
+      window.location.replace(target + window.location.search + window.location.hash);
+    </script>
+    <noscript><meta http-equiv="refresh" content={`0;url=${target}`} /></noscript>
+  </head>
+  <body>
+    <p>Redirecting to <a href={target}>the English page</a>.</p>
+  </body>
+</html>

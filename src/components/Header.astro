@@ -1,0 +1,58 @@
+---
+import { ArrowUpRight, SunMoon } from '@lucide/astro';
+import { localPath, site, text, type Locale } from '../data/site';
+interface Props {
+  locale: Locale;
+  path: string;
+  active: 'home' | 'projects' | 'resume';
+}
+const { locale, path, active } = Astro.props;
+const other = locale === 'zh' ? 'en' : 'zh';
+const links = [
+  { key: 'home', path: '', label: text(locale, '主页', 'Home') },
+  { key: 'projects', path: 'projects', label: text(locale, '项目', 'Projects') },
+  { key: 'resume', path: 'resume', label: text(locale, '简历', 'Résumé') },
+];
+---
+
+<header class="site-header">
+  <a class="brand" href={localPath('', locale)} aria-label={text(locale, 'medz 主页', 'medz home')}>
+    medz<span>.</span>
+  </a>
+  <nav class="site-nav" aria-label={text(locale, '主导航', 'Main navigation')}>
+    {links.map((link) => (
+      <a
+        href={localPath(link.path, locale)}
+        aria-current={active === link.key ? 'page' : undefined}
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+  <div class="site-utilities">
+    <a class="github-link" href={site.github} target="_blank" rel="noopener noreferrer">
+      GitHub
+      <ArrowUpRight aria-hidden="true" />
+    </a>
+    <span class="nav-divider" aria-hidden="true"></span>
+    <a
+      class="language-link"
+      href={localPath(path, other)}
+      lang={other === 'en' ? 'en' : 'zh-CN'}
+      hreflang={other === 'en' ? 'en' : 'zh-CN'}
+      aria-label={text(locale, 'Switch to English', '切换为中文')}
+    >
+      {text(locale, 'EN', '中文')}
+    </a>
+    <button
+      type="button"
+      class="theme-toggle"
+      data-theme-toggle
+      data-light-label={text(locale, '切换浅色主题', 'Switch to light theme')}
+      data-dark-label={text(locale, '切换深色主题', 'Switch to dark theme')}
+      aria-label={text(locale, '切换明暗主题', 'Toggle color theme')}
+    >
+      <SunMoon aria-hidden="true" />
+    </button>
+  </div>
+</header>

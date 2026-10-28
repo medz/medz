@@ -1,0 +1,93 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { localPath, site, type Locale } from '../data/site';
+import interFont from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import '../styles/site.css';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  path: string;
+  active: 'home' | 'projects' | 'resume';
+  noindex?: boolean;
+}
+
+const { locale, title, description, path, active, noindex = false } = Astro.props;
+const canonical = new URL(localPath(path, locale), site.url);
+---
+
+<!doctype html>
+<html lang={locale === 'zh' ? 'zh-CN' : 'en'}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content={description} />
+    <meta name="author" content={site.name} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <title>{title}</title>
+    {!noindex && (
+      <>
+        <link rel="canonical" href={canonical} />
+        <link rel="alternate" hreflang="zh-CN" href={new URL(localPath(path, 'zh'), site.url)} />
+        <link rel="alternate" hreflang="en" href={new URL(localPath(path, 'en'), site.url)} />
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={new URL(localPath(path, 'zh'), site.url)}
+        />
+      </>
+    )}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href={interFont} as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="medz.dev" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {!noindex && <meta property="og:url" content={canonical} />}
+    <meta property="og:locale" content={locale === 'zh' ? 'zh_CN' : 'en_US'} />
+    <meta name="twitter:card" content="summary" />
+    <script is:inline>
+      try {
+        const theme = localStorage.getItem('medz-theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      {locale === 'zh' ? '跳到内容' : 'Skip to content'}
+    </a>
+    <div class="site-shell">
+      <Header locale={locale} path={path} active={active} />
+      <slot />
+      <Footer locale={locale} />
+    </div>
+    <script>
+      const button = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+      const preference = window.matchMedia('(prefers-color-scheme: dark)');
+      function updateThemeLabel() {
+        if (!button) return;
+        const theme = document.documentElement.dataset.theme;
+        const dark = theme === 'dark' || (!theme && preference.matches);
+        const label = dark ? button.dataset.lightLabel : button.dataset.darkLabel;
+        if (label) button.setAttribute('aria-label', label);
+      }
+      button?.addEventListener('click', () => {
+        const theme = document.documentElement.dataset.theme;
+        const dark = theme === 'dark' || (!theme && preference.matches);
+        const next = dark ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        try {
+          localStorage.setItem('medz-theme', next);
+        } catch {}
+        updateThemeLabel();
+      });
+      preference.addEventListener('change', updateThemeLabel);
+      window.addEventListener('pageshow', updateThemeLabel);
+      updateThemeLabel();
+    </script>
+  </body>
+</html>

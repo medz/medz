@@ -1,0 +1,62 @@
+---
+import { ArrowUpRight, Star } from '@lucide/astro';
+import { dateLabel, localPath, text, type Locale } from '../data/site';
+import type { Project } from '../data/projects';
+interface Props {
+  project: Project;
+  locale: Locale;
+}
+const { project: p, locale } = Astro.props;
+---
+
+<article class="project-card" aria-labelledby={`project-${p.slug}`}>
+  <div class="card-topline">
+    <span class="mono card-category">{p.category}</span>
+    <a
+      class="card-stars"
+      href={`${p.source}/stargazers`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${p.slug} ${text(locale, '的 GitHub Stars：', 'GitHub stars: ')}${p.stars}`}
+    >
+      <Star aria-hidden="true" />
+      <span>{p.stars}</span>
+    </a>
+  </div>
+  <h2 class="card-title" id={`project-${p.slug}`}>
+    <a href={localPath(p.slug, locale)}>
+      <span>{p.slug}</span>
+      <ArrowUpRight aria-hidden="true" />
+    </a>
+  </h2>
+  <span class="mono card-repo">{p.repo}</span>
+  <p class="card-description">{p.description[locale]}</p>
+  <div class="card-bottom">
+    <div class="card-meta">
+      {p.language && <span>{p.language}</span>}
+      {p.license && <span class="card-license">{p.license}</span>}
+      <span class="card-updated">
+        <span>{text(locale, '更新', 'Updated')}</span>
+        <time class="mono" datetime={p.updatedAt}>
+          {dateLabel(p.updatedAt)}
+        </time>
+      </span>
+    </div>
+    <nav class="card-links" aria-label={`${p.slug} ${text(locale, '项目链接', 'project links')}`}>
+      <a class="card-doc-link" href={p.docsUrl} target="_blank" rel="noopener noreferrer">
+        <span>{text(locale, '文档', 'Docs')}</span>
+        <ArrowUpRight aria-hidden="true" />
+      </a>
+      <a href={p.source} target="_blank" rel="noopener noreferrer">
+        GitHub
+        <ArrowUpRight aria-hidden="true" />
+      </a>
+      {p.packageUrl && (
+        <a href={p.packageUrl} target="_blank" rel="noopener noreferrer">
+          pub.dev
+          <ArrowUpRight aria-hidden="true" />
+        </a>
+      )}
+    </nav>
+  </div>
+</article>

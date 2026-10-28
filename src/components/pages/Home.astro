@@ -1,0 +1,63 @@
+---
+import { ArrowRight, ArrowUpRight } from '@lucide/astro';
+import Contact from '../Contact.astro';
+import { projects } from '../../data/projects';
+import { dateLabel, localPath, text, type Locale } from '../../data/site';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<main id="main" class="home">
+  <section class="hero" aria-label={text(locale, '个人介绍', 'Introduction')}>
+    <h1>
+      Build with
+      <br />
+      <span>intention.</span>
+    </h1>
+    <div class="intro">
+      <p class="intro-name">
+        {text(locale, '我是 Seven', 'I’m Seven')}
+        <span class="name-period">.</span>
+      </p>
+      <p>
+        {text(locale, '写代码，也打磨想法。', 'Writing code. Refining ideas.')}
+        <br />
+        {text(locale, '关注语言、运行时与 Web，', 'Exploring languages, runtimes, and the web.')}
+        <br />
+        {text(locale, '构建小而专注的工具。', 'Building small, focused tools.')}
+      </p>
+      <a class="text-link" href={localPath('resume', locale)}>
+        {text(locale, '更多关于我', 'More about me')}
+        <ArrowUpRight aria-hidden="true" />
+      </a>
+    </div>
+  </section>
+  <section class="recent-projects" aria-labelledby="recent-title">
+    <div class="section-heading">
+      <h2 id="recent-title">{text(locale, '最近更新', 'Recently updated')}</h2>
+      <a class="text-link" href={localPath('projects', locale)}>
+        {text(locale, '全部项目', 'All projects')}
+        <ArrowRight aria-hidden="true" />
+      </a>
+    </div>
+    {projects.slice(0, 4).map((p, i) => (
+      <a class="project-row" href={localPath(p.slug, locale)}>
+        <span class="project-index mono">{String(i + 1).padStart(2, '0')}</span>
+        <div class="project-name">
+          <h3>{p.slug}</h3>
+          <span>
+            {p.language} / {p.category} ·{' '}
+            <time datetime={p.updatedAt}>{dateLabel(p.updatedAt).slice(5)}</time>
+          </span>
+        </div>
+        <p>{p.description[locale]}</p>
+        <span class="row-arrow">
+          <ArrowUpRight aria-hidden="true" />
+        </span>
+      </a>
+    ))}
+  </section>
+  <Contact locale={locale} />
+</main>

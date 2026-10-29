@@ -1,6 +1,7 @@
 ---
 import { ArrowRight, ArrowUpRight } from '@lucide/astro';
 import Contact from '../Contact.astro';
+import Sponsors from '../Sponsors.astro';
 import { projects } from '../../data/projects';
 import { dateLabel, localPath, text, type Locale } from '../../data/site';
 interface Props {
@@ -59,5 +60,6 @@ const { locale } = Astro.props;
       </a>
     ))}
   </section>
+  <Sponsors locale={locale} />
   <Contact locale={locale} />
 </main>

@@ -8,6 +8,7 @@ const root = resolve('dist');
 const files = await readdir(root, { recursive: true });
 const pages = new Map();
 const origin = 'https://medz.dev';
+const sponsors = JSON.parse(await readFile('src/data/sponsors.json', 'utf8'));
 
 for (const file of files.filter((file) => file.endsWith('.html'))) {
   const path = `/${file.replace(/index\.html$/, '')}`;
@@ -88,6 +89,18 @@ for (const [path, html] of pages) {
     assert(!html.includes('href="/en/'), `Page links to an English alias: ${path}`);
   }
   for (const [, value] of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) await checkLink(value, path);
+}
+
+for (const path of ['/', '/zh/']) {
+  const html = pages.get(path).replaceAll('&amp;', '&');
+  assert(html.includes('id="sponsors-title"'), `Missing sponsor section: ${path}`);
+  assert.equal([...html.matchAll(/<li\b[^>]*class="sponsor"/g)].length, sponsors.length);
+  for (const sponsor of sponsors) {
+    assert(html.includes(`src="${sponsor.avatarUrl}"`), `Missing sponsor avatar: ${sponsor.login}`);
+    assert(html.includes(`href="https://github.com/${sponsor.login}"`));
+    if (sponsor.websiteUrl) assert(html.includes(`href="${sponsor.websiteUrl}"`));
+  }
+  assert(!html.includes('github.com/medz/public'), 'Homepage still depends on SponsorKit output.');
 }
 
 const sitemap = await readFile(resolve(root, 'sitemap.xml'), 'utf8');

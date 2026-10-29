@@ -947,7 +947,7 @@ main {
   .home {
     display: grid;
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    grid-template-areas: 'hero projects' 'contact contact';
+    grid-template-areas: 'hero projects' 'sponsors sponsors' 'contact contact';
     column-gap: clamp(56px, 6cqi, 112px);
     row-gap: 64px;
     padding-top: 64px;

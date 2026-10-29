@@ -780,12 +780,25 @@ main {
   letter-spacing: 0.13em;
 }
 .resume-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: 'identity portrait' 'links links';
+  align-items: start;
+  gap: 20px 24px;
   padding-bottom: 38px;
   border-bottom: 1px solid var(--ink);
+}
+.resume-portrait {
+  grid-area: portrait;
+  display: block;
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.resume-identity {
+  grid-area: identity;
+  min-width: 0;
 }
 .resume-heading h1 {
   font-size: 56px;
@@ -806,9 +819,10 @@ main {
   font-size: 11px;
 }
 .resume-links {
+  grid-area: links;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 8px;
   padding-bottom: 3px;
   font-size: 11px;
@@ -1026,6 +1040,11 @@ main {
     padding: 0;
     border: 0;
   }
+  .resume-portrait {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 24px;
+  }
   .resume-heading h1 {
     font-size: 48px;
     letter-spacing: -2.6px;
@@ -1034,7 +1053,6 @@ main {
     margin-top: 16px;
   }
   .resume-links {
-    align-items: flex-start;
     margin-top: 30px;
   }
   .resume-body {
@@ -1248,10 +1266,12 @@ main {
     margin-bottom: 27px;
   }
   .resume-heading {
-    flex-direction: column;
-    align-items: flex-start;
     padding-bottom: 27px;
-    gap: 20px;
+    gap: 20px 16px;
+  }
+  .resume-portrait {
+    width: 64px;
+    height: 64px;
   }
   .resume-heading h1 {
     font-size: 44px;
@@ -1262,7 +1282,6 @@ main {
     font-size: 12px;
   }
   .resume-links {
-    align-items: flex-start;
     gap: 5px;
   }
   .resume-section {
@@ -1374,12 +1393,20 @@ main {
     display: block;
   }
   .resume-heading {
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    gap: 12mm;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 24mm;
+    grid-template-areas: 'identity portrait' 'links portrait';
+    align-items: start;
+    gap: 3mm 8mm;
     padding: 0 0 6mm;
     border-bottom: 1pt solid #18181b;
+    break-inside: avoid;
+  }
+  .resume-portrait {
+    width: 24mm;
+    height: 24mm;
+    margin: 0;
+    border-radius: 2mm;
   }
   .resume-heading h1 {
     font-size: 30pt;
@@ -1394,10 +1421,11 @@ main {
     font-size: 9pt;
   }
   .resume-links {
-    align-items: flex-end;
-    flex-shrink: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 0;
-    gap: 1mm;
+    padding: 0;
+    gap: 1mm 4mm;
     font-size: 9pt;
   }
   .resume-section {

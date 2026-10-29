@@ -18,7 +18,15 @@ const { locale } = Astro.props;
   </div>
   <div class="resume-layout">
     <header class="resume-heading">
-      <div>
+      <img
+        class="resume-portrait"
+        src="https://avatars.githubusercontent.com/u/5564821?s=256&v=4"
+        alt="Seven Du"
+        width="112"
+        height="112"
+        decoding="async"
+      />
+      <div class="resume-identity">
         <h1>Seven Du<span>.</span></h1>
         <p>{text(locale, '全栈工程师 · 开源创业者', 'Full-stack Engineer · Open-source Founder')}</p>
         <p class="resume-location">{text(locale, '中国 · 成都', 'Chengdu, China')}</p>

@@ -84,14 +84,11 @@ const escape = (value) => String(value).replace(/[&<>"']/g, (character) => ({
 
 export function renderSponsors(sponsors) {
   if (!sponsors.length) return 'Your support helps me keep building open-source tools.';
-  const rows = sponsors.map(({ login, name, avatarUrl, websiteUrl }) => {
+  const people = sponsors.map(({ login, name, avatarUrl, websiteUrl }) => {
     const profile = `https://github.com/${login}`;
-    return `  <tr>
-    <td><a href="${profile}"><img src="${escape(avatarUrl)}" width="52" height="52" alt="${escape(name)}" align="middle"></a> <a href="${profile}">${escape(name)}</a></td>
-    <td><a href="${profile}">GitHub</a>${websiteUrl ? ` · <a href="${escape(websiteUrl)}">Website</a>` : ''}</td>
-  </tr>`;
+    return `  <a href="${profile}"><img src="${escape(avatarUrl)}" width="36" height="36" alt="" align="middle">&nbsp;<strong>${escape(name)}</strong></a>${websiteUrl ? `&nbsp;·&nbsp;<a href="${escape(websiteUrl)}">Website</a>` : ''}`;
   });
-  return `<table>\n${rows.join('\n')}\n</table>`;
+  return `<p>\n${people.join('&nbsp;\n')}\n</p>`;
 }
 
 export function updateReadme(readme, sponsors) {

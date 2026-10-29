@@ -84,11 +84,18 @@ const escape = (value) => String(value).replace(/[&<>"']/g, (character) => ({
 
 export function renderSponsors(sponsors) {
   if (!sponsors.length) return 'Your support helps me keep building open-source tools.';
-  const people = sponsors.map(({ login, name, avatarUrl, websiteUrl }) => {
+  const cells = sponsors.map(({ login, name, avatarUrl, websiteUrl }) => {
     const profile = `https://github.com/${login}`;
-    return `  <a href="${profile}"><img src="${escape(avatarUrl)}" width="36" height="36" alt="" align="middle">&nbsp;<strong>${escape(name)}</strong></a>${websiteUrl ? `&nbsp;·&nbsp;<a href="${escape(websiteUrl)}">Website</a>` : ''}`;
+    const domain = websiteUrl ? new URL(websiteUrl).hostname.replace(/^www\./, '') : null;
+    return `    <td align="center" valign="top" width="400">
+      <a href="${profile}"><img src="${escape(avatarUrl)}" width="48" height="48" alt=""><br><strong>${escape(name)}</strong></a>${websiteUrl ? `<br><sub><a href="${escape(websiteUrl)}">${escape(domain)}</a></sub>` : ''}
+    </td>`;
   });
-  return `<p>\n${people.join('&nbsp;\n')}\n</p>`;
+  const rows = [];
+  for (let i = 0; i < cells.length; i += 2) {
+    rows.push(`  <tr>\n${cells.slice(i, i + 2).join('\n')}\n  </tr>`);
+  }
+  return `<table>\n${rows.join('\n')}\n</table>`;
 }
 
 export function updateReadme(readme, sponsors) {
